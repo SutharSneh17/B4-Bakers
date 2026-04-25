@@ -1,0 +1,22 @@
+{
+  "name": "bubblebakery-main",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"><kbd><img src=\"https://raw.githubusercontent.com/bubblevy/bubblebakery/main/assets/images/demo/image.png\" width=\"100%\" alt=\"BubbleBakery Demo\"></kbd></p>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node assets/js/main.js",
+    "dev": "node assets/js/main.js",
+    "setup:twilio": "node scripts/setup-twilio-env.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "twilio": "^5.12.1"
+  }
+}

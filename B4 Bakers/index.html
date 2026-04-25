@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <meta
+      name="description"
+      content="Discover fresh, handcrafted breads at B4 Bakers. Enjoy a variety of delicious options baked daily."
+    />
+    <meta
+      name="keywords"
+      content="bakery, fresh bread, pastries, croissants, sweet bread"
+    />
+    <meta name="author" content="B4 Bakers" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo/logo.svg"
+      type="image/x-icon"
+    />
+    <title>
+      B4 Bakers - Discover fresh, handcrafted breads at B4 Bakers. Enjoy a
+      variety of delicious options baked daily.
+    </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Global header/navigation; mobile nav behavior is handled in assets/js/main.js -->
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <h3 onclick="window.location.href=''">
+            <i class="fa-solid fa-burger fa-bounce" style="color: #2563eb"></i
+            >&nbsp;B4 Bakers
+          </h3>
+        </div>
+        <nav class="navigation">
+          <h3 class="pb-2 brand d-none" onclick="window.location.href=''">
+            <i class="fa-solid fa-burger fa-bounce" style="color: #2563eb"></i
+            >&nbsp;B4 Bakers
+          </h3>
+          <li>
+            <a
+              class="active"
+              href="#"
+              id="home-nav"
+              onclick="scrollToSection(event, 'home', 'home-nav')"
+              ><i class="fa-solid fa-house"></i>&ensp;Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="product-nav"
+              onclick="scrollToSection(event, 'products', 'product-nav')"
+              ><i class="fa-solid fa-bread-slice"></i>&ensp;Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="service-nav"
+              onclick="scrollToSection(event, 'faq', 'service-nav')"
+              ><i class="fa-solid fa-user-gear"></i>&ensp;FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="cart.html"
+              id="cart-nav"
+              ><i class="fa-solid fa-cart-shopping"></i>&ensp;Cart
+              <span class="badge rounded-pill bg-primary" id="cart-count">0</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="about-us"
+              onclick="scrollToSection(event, 'about', 'about-us')"
+              ><i class="fa-solid fa-users"></i>&ensp;About Us</a
+            >
+          </li>
+          <li id="auth-login-item">
+            <a href="#" id="auth-nav-link"
+              ><i class="fa-solid fa-right-to-bracket"></i>&ensp;Login</a
+            >
+          </li>
+        </nav>
+        <div class="bars">
+          <img
+            src="assets/images/others/menu.png"
+            alt="hamburger-menu"
+            class="bar"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Hero section for landing CTA -->
+    <div class="home-section" id="home">
+      <div class="home-content">
+        <h1 style="color: #edf2f7">
+          Freshly Baked,<br />
+          Tasted with <br />Love
+        </h1>
+        <p>Made from Natural & Premium Ingredients, for Authentic Taste</p>
+        <div class="home-links">
+          <div class="first">
+            <a
+              href="#"
+              onclick="scrollToSection(event, 'products', 'product-nav')"
+              >Shop Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Featured products on home page; Add To Cart buttons are wired by assets/js/cart.js -->
+    <div class="bg-shop" id="products">
+      <div class="shop-links">
+        <div><h2>High Selling Products</h2></div>
+      </div>
+      <div class="shop-flex">
+        <div class="shop1">
+          <div class="shop-image">
+            <img src="assets/images/products/2-lapis.png" alt="Two-Layer Sandwich" />
+          </div>
+          <h2>Two-Layer Sandwich</h2>
+          <div class="d-flex justify-content-between">
+            <article>â‚¹89</article>
+            <div
+              class="d-flex mb-3 align-items-center gap-1 justify-content-center"
+            >
+              <div class="stars mb-0 d-flex align-items-center gap-1">
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+              </div>
+              <div style="font-size: 12px">(283)</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-custom w-100 mt-1"
+            data-add-to-cart
+            data-name="Two-Layer Sandwich"
+            data-price="89"
+            data-image="assets/images/products/2-lapis.png"
+          >
+            Add To Cart
+          </button>
+        </div>
+        <div class="shop1">
+          <div class="shop-image">
+            <img src="assets/images/products/3-lapis.png" alt="Three-Layer Sandwich" />
+          </div>
+          <h2>Three-Layer Sandwich</h2>
+          <div class="d-flex justify-content-between">
+            <article>â‚¹129</article>
+            <div
+              class="d-flex mb-3 align-items-center gap-1 justify-content-center"
+            >
+              <div class="stars mb-0 d-flex align-items-center gap-1">
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+              </div>
+              <div style="font-size: 12px">(999+)</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-custom w-100 mt-1"
+            data-add-to-cart
+            data-name="Three-Layer Sandwich"
+            data-price="129"
+            data-image="assets/images/products/3-lapis.png"
+          >
+            Add To Cart
+          </button>
+        </div>
+        <div class="shop1">
+          <div class="shop-image">
+            <img
+              src="assets/images/products/segitiga.png"
+              alt="Triangle Sandwich"
+            />
+          </div>
+          <h2>Triangle Sandwich</h2>
+          <div class="d-flex justify-content-between">
+            <article>â‚¹79</article>
+            <div
+              class="d-flex mb-3 align-items-center gap-1 justify-content-center"
+            >
+              <div class="stars mb-0 d-flex align-items-center gap-1">
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+              </div>
+              <div style="font-size: 12px">(452)</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-custom w-100 mt-1"
+            data-add-to-cart
+            data-name="Triangle Sandwich"
+            data-price="79"
+            data-image="assets/images/products/segitiga.png"
+          >
+            Add To Cart
+          </button>
+        </div>
+        <div class="shop1">
+          <div class="shop-image">
+            <img src="assets/images/products/panjang.png" alt="Long Sandwich" />
+          </div>
+          <h2>Long Sandwich</h2>
+          <div class="d-flex justify-content-between">
+            <article>â‚¹149</article>
+            <div
+              class="d-flex mb-3 align-items-center gap-1 justify-content-center"
+            >
+              <div class="stars mb-0 d-flex align-items-center gap-1">
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+              </div>
+              <div style="font-size: 12px">(459)</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-custom w-100 mt-1"
+            data-add-to-cart
+            data-name="Long Sandwich"
+            data-price="149"
+            data-image="assets/images/products/panjang.png"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a class="btn btn-custom px-4 py-2" href="more-products.html"
+          >Explore More Products</a
+        >
+      </div>
+    </div>
+    <div class="bg-menu" id="menu">
+      <div class="menu-title">
+        <section>Price List</section>
+        <h2>Coffee Menu</h2>
+        <p style="margin-top: 0.5rem; color: #d1d5db">
+          To enjoy fresh coffee, visit your nearest outlet branch.
+        </p>
+        <hr />
+      </div>
+      <div class="menu-flex">
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/americano.png" alt="" />
+          </div>
+          <div><h4>Chocolate Espresso</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹149</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/cappucino.png" alt="" />
+          </div>
+          <div><h4>Cappucino</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹139</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/coffelatte.png" alt="" />
+          </div>
+          <div><h4>Coffe Latte</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹139</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/espresso.png" alt="" />
+          </div>
+          <div><h4>Espresso Susu</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹119</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/kopisusuvanilla.png" alt="" />
+          </div>
+          <div><h4>Kopi Susu Vanilla</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹129</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/espresso.png" alt="" />
+          </div>
+          <div><h4>Kopi Susu Caramel</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹129</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/americano.png" alt="" />
+          </div>
+          <div><h4>Americano</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹119</h4></div>
+        </div>
+        <div class="menu1">
+          <div class="small-image">
+            <img src="assets/images/products/vanillalatte.png" alt="" />
+          </div>
+          <div><h4>Vanilla Latte</h4></div>
+          <div class="line"></div>
+          <div><h4>â‚¹119</h4></div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gallery" id="galery">
+      <div class="gallery-flex">
+        <div class="image-one event">
+          <img src="assets/images/others/gallery-1.jpg" alt="" />
+          <div class="overlay"></div>
+        </div>
+        <div class="inside-gallery">
+          <div class="left">
+            <div class="event">
+              <img src="assets/images/others/gallery-2.jpg" alt="" />
+              <div class="overlay"></div>
+            </div>
+            <div class="event">
+              <img src="assets/images/others/gallery-3.jpg" alt="" />
+              <div class="overlay"></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="event">
+              <img src="assets/images/others/gallery-4.jpg" alt="" />
+              <div class="overlay"></div>
+            </div>
+            <div class="event">
+              <img src="assets/images/others/gallery-5.jpg" alt="" />
+              <div class="overlay"></div>
+            </div>
+          </div>
+        </div>
+        <div class="last-image event">
+          <img src="assets/images/others/gallery-6.jpg" alt="" />
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-about" id="services">
+      <div class="about-flex">
+        <div class="about1">
+          <div>
+            <img
+              src="assets/images/others/left-footer-image.jpg"
+              alt="footer-image-2"
+            />
+          </div>
+          <div class="about1-txt">
+            <h3 style="letter-spacing: 2px">How to Order</h3>
+            <div class="txt-inside">
+              <section>By Phone</section>
+              <section>9909824559</section>
+            </div>
+            <div class="txt-inside">
+              <section>At Our Outlets</section>
+              <section class="text-end">
+                Available at 4 outlet locations in India
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="about1">
+          <div>
+            <img
+              src="assets/images/others/right-footer-image.jpg"
+              alt="footer-image-2"
+            />
+          </div>
+          <div class="about1-txt">
+            <h3 style="letter-spacing: 2px">Operating Hours</h3>
+            <div class="txt-inside">
+              <section>Every Day</section>
+                <section>09:00 - 21:00 IST</section>
+              </div>
+              <div class="txt-inside">
+                <section>Sunday</section>
+                <section>Closed</section>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq" id="faq" style="max-width: 90%; margin: 0 auto">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div
+        class="accordion"
+        style="
+          --bs-accordion-bg: #edf2f7;
+          --bs-accordion-color: #000;
+          --bs-accordion-border-color: #2563eb;
+          --bs-accordion-btn-color: #edf2f7;
+          --bs-accordion-active-bg: #2563eb;
+          --bs-accordion-btn-focus-box-shadow: none;
+        "
+        id="faq-accordion"
+      >
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              What types of bread are available at this store?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              We offer a variety of bread options, from soft classic bread to unique bread creations with various flavors and textures.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              How can I place an order?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              You can place an order by:
+              <ul class="list-unstyled mt-2">
+                <li>1. Call us at 9909824559</li>
+                <li>2. Visit one of our outlets directly</li>
+                <li>3. Email us at contact@example.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              How long does bread last after purchase?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              Plain bread and sweet bread generally last 2-3 days if stored in a cool place. Bread without preservatives should be consumed immediately for best quality.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              Does this bread shop offer delivery service?
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              Yes, we provide delivery services in certain areas. Contact us to find out which areas we deliver to or you can order through a delivery app.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              What if I want to submit a complaint or suggestion?
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              We're always happy to hear your feedback! Please contact us via email at contact@example.com or call us at 9909824559.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              Are there discounts for bulk purchases?
+            </button>
+          </h2>
+          <div
+            id="collapseSix"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              Yes, we offer special discounts for bulk purchases, such as for events or catering orders. Please contact us for more information.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven"
+              aria-expanded="false"
+              aria-controls="collapseSeven"
+            >
+              Where are the outlet locations?
+            </button>
+          </h2>
+          <div
+            id="collapseSeven"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              You can order directly at our stores by visiting one of our four outlets located at:
+              <ul class="list-unstyled mt-3">
+                <li>
+                  <strong>Mumbai:</strong> 21 MG Road, Fort, Mumbai, Maharashtra
+                  400001
+                </li>
+                <li>
+                  <strong>Delhi:</strong> 14 Connaught Place, New Delhi, Delhi
+                  110001
+                </li>
+                <li>
+                  <strong>Bengaluru:</strong> 8 Brigade Road, Ashok Nagar,
+                  Bengaluru, Karnataka 560001
+                </li>
+                <li>
+                  <strong>Hyderabad:</strong> 32 Banjara Hills Road No. 1,
+                  Hyderabad, Telangana 500034
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEight"
+              aria-expanded="false"
+              aria-controls="collapseEight"
+            >
+              What time does the bread shop open?
+            </button>
+          </h2>
+          <div
+            id="collapseEight"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faq-accordion"
+          >
+            <div class="accordion-body">
+              Our bread shop is open daily from 09:00 to 21:00 IST. On Sundays we are closed. Hours may change on public holidays.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer pb-3" id="about">
+      <div class="footer-flex">
+        <div class="footer-brand">
+          <div>
+            <h3
+              style="
+                font-family: 'Pushster', cursive;
+                font-weight: 700;
+                letter-spacing: 2px;
+              "
+            >
+              <i class="fa-solid fa-burger" style="color: #2563eb"></i
+              >&nbsp;B4 Bakers
+            </h3>
+          </div>
+          <section style="line-height: 1.45rem; margin-top: 10px">
+            Tempat di mana aroma roti segar mengisi udara dan menghadirkan rasa
+            Where the aroma of fresh bread fills the air and brings warm authentic flavors every day. We offer a variety of bread options, from soft classic bread to unique bread creations with various flavors and textures.
+          </section>
+        </div>
+
+        <div class="flex-space-between" style="flex-wrap: wrap">
+          <div class="social-media">
+            <section>
+              <h3>Social Media</h3>
+              <span
+                ><a href="https://facebook.com"
+                  ><i class="fab fa-facebook-square"></i>&ensp;Facebook</a
+                ></span
+              >
+              <span
+                ><a href="https://instagram.com"
+                  ><i class="fab fa-instagram"></i>&ensp;Instagram</a
+                ></span
+              >
+
+            </section>
+          </div>
+
+          <div class="contact">
+            <section>
+              <h3>Contact Us</h3>
+              <span
+                ><a href="tel:9909824559"
+                  ><i class="fas fa-phone"></i>&ensp;9909824559</a
+                ></span
+              >
+              <span>
+                <a href="mailto:contact@example.com"
+                  ><i class="fa-regular fa-envelope"></i
+                  >&ensp;contact@example.com</a
+                ></span
+              >
+            </section>
+          </div>
+
+          <div class="legalitas">
+            <section>
+              <h3>Legal</h3>
+              <span
+                ><a href="javascript:void(0)"
+                  ><i class="fa-solid fa-file-signature"></i>&ensp;Terms &
+                  Conditions</a
+                ></span
+              >
+              <span
+                ><a href="javascript:void(0)"
+                  ><i class="fa-solid fa-user-shield"></i>&ensp;Privacy
+                  Policy</a
+                ></span
+              >
+            </section>
+          </div>
+
+          <div class="outlet">
+            <section>
+              <h3>Outlet Locations</h3>
+              <span
+                ><i class="fas fa-map-marker-alt"></i>&ensp;21 MG Road, Fort,
+                Mumbai, Maharashtra 400001</span
+              >
+              <span
+                ><i class="fas fa-map-marker-alt"></i>&ensp;14 Connaught Place,
+                New Delhi, Delhi 110001</span
+              >
+              <span
+                ><i class="fas fa-map-marker-alt"></i>&ensp;8 Brigade Road,
+                Ashok Nagar, Bengaluru, Karnataka 560001</span
+              >
+              <span
+                ><i class="fas fa-map-marker-alt"></i>&ensp;32 Banjara Hills
+                Road No. 1, Hyderabad, Telangana 500034</span
+              >
+            </section>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-center copyright"
+        style="color: #edf2f7; margin-top: 4rem"
+      >
+        <p style="font-size: small">Copyright 2026, All Right Reserved</p>
+      </div>
+    </div>
+
+    <!-- Auth modal: login/register/OTP flow backed by Express endpoints in assets/js/main.js -->
+    <div
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      aria-labelledby="authModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content auth-modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="authModalLabel">Account Access</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body pt-0">
+            <div id="auth-status-message" class="alert d-none mb-3"></div>
+
+            <div id="login-panel">
+              <h6 class="auth-panel-title">Login with Phone</h6>
+              <form id="login-form">
+                <div class="mb-3">
+                  <label for="login-phone" class="form-label">Phone Number</label>
+                  <input
+                    id="login-phone"
+                    type="tel"
+                    class="form-control"
+                    placeholder="+919876543210"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-custom w-100 mt-1">
+                  Continue
+                </button>
+              </form>
+              <p class="auth-switch mt-3 mb-0">
+                No account? <button id="go-register-btn" type="button">Register</button>
+              </p>
+            </div>
+
+            <div id="register-panel" class="d-none">
+              <h6 class="auth-panel-title">Create Account</h6>
+              <form id="register-form">
+                <div class="mb-3">
+                  <label for="register-name" class="form-label">Full Name</label>
+                  <input
+                    id="register-name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="register-phone" class="form-label">Phone Number</label>
+                  <input
+                    id="register-phone"
+                    type="tel"
+                    class="form-control"
+                    placeholder="+919876543210"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-custom w-100 mt-1">
+                  Send OTP
+                </button>
+              </form>
+              <p class="auth-switch mt-3 mb-0">
+                Already have an account?
+                <button id="go-login-btn" type="button">Login</button>
+              </p>
+            </div>
+
+            <div id="otp-panel" class="d-none">
+              <h6 class="auth-panel-title">OTP Verification</h6>
+              <form id="otp-form">
+                <div class="mb-3">
+                  <label for="otp-phone" class="form-label">Phone Number</label>
+                  <input id="otp-phone" type="text" class="form-control" readonly />
+                </div>
+                <div class="mb-3">
+                  <label for="otp-code" class="form-label">OTP Code</label>
+                  <input
+                    id="otp-code"
+                    type="text"
+                    class="form-control"
+                    maxlength="6"
+                    placeholder="Enter 6 digit OTP"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-custom w-100 mt-1">
+                  Verify OTP
+                </button>
+              </form>
+              <p class="auth-switch mt-3 mb-0">
+                Wrong number?
+                <button id="back-register-btn" type="button">Back to Register</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional product filtering plugin for grid sections -->
+    <script src="assets/js/mixitup.min.js"></script>
+    <!-- Small helper for active nav state + smooth section scrolling -->
+    <script>
+      if (typeof mixitup === "function" && document.querySelector(".consts")) {
+        mixitup(".consts");
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- main.js = auth + backend API calls, cart.js = cart interaction on product cards -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+      function setActive(element) {
+        const links = document.querySelectorAll(".link-menu");
+        links.forEach((link) => link.classList.remove("active"));
+        element.classList.add("active");
+      }
+
+      function scrollToSection(event, sectionId, element) {
+        event.preventDefault();
+
+        const links = document.querySelectorAll(".navigation a");
+        links.forEach((link) => link.classList.remove("active"));
+
+        const activeLink = document.getElementById(element);
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+
+        const targetElement = document.getElementById(sectionId);
+        if (!targetElement) {
+          return;
+        }
+        const offset = -80;
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition + offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <meta name="description" content="Profile and order history for B4 Balers." />
+    <meta name="keywords" content="bakery, profile, order history" />
+    <meta name="author" content="B4 Balers" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo/logo.svg"
+      type="image/x-icon"
+    />
+    <title>B4 Balers - Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Profile page header and app navigation -->
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <h3 onclick="window.location.href='index.html'">
+            <i class="fa-solid fa-burger fa-bounce" style="color: #2563eb"></i
+            >&nbsp;B4 Balers
+          </h3>
+        </div>
+        <nav class="navigation">
+          <li>
+            <a href="index.html"><i class="fa-solid fa-house"></i>&ensp;Home</a>
+          </li>
+          <li>
+            <a href="more-products.html"
+              ><i class="fa-solid fa-bread-slice"></i>&ensp;More Products</a
+            >
+          </li>
+          <li>
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i>&ensp;Cart
+              <span class="badge rounded-pill bg-primary" id="cart-count">0</span></a
+            >
+          </li>
+          <li>
+            <a class="active" href="profile.html"
+              ><i class="fa-solid fa-user"></i>&ensp;Profile</a
+            >
+          </li>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Profile summary, delivery-location editor, and order-history list -->
+    <main class="bg-shop" style="min-height: 70vh">
+      <div class="shop-links">
+        <div><h2>Profile</h2></div>
+      </div>
+      <div
+        style="
+          background: #111;
+          border: 1px solid #333;
+          border-radius: 12px;
+          padding: 1.25rem;
+          color: #edf2f7;
+        "
+      >
+        <h5 id="profile-user-title" style="margin-bottom: 0.5rem">Guest User</h5>
+        <p id="profile-login-hint" style="color: #9ca3af; margin-bottom: 1rem">
+          Login to view your order history.
+        </p>
+        <!-- Delivery location form used during checkout validation -->
+        <form id="profile-location-form" class="mb-3">
+          <label for="profile-location-input" class="form-label text-light"
+            >Delivery Location</label
+          >
+          <div class="d-flex gap-2">
+            <input
+              id="profile-location-input"
+              type="text"
+              class="form-control"
+              placeholder="Enter your full delivery address"
+              autocomplete="street-address"
+            />
+            <button
+              type="submit"
+              id="profile-location-save-btn"
+              class="btn btn-custom"
+            >
+              Save
+            </button>
+          </div>
+          <div
+            id="profile-location-status"
+            style="font-size: 0.9rem; color: #9ca3af; margin-top: 0.5rem"
+          ></div>
+        </form>
+        <!-- Orders are rendered from localStorage key: b4_bakers_order_history -->
+        <div id="profile-order-history" class="d-flex flex-column gap-2"></div>
+        <!-- Session actions: redirect to login or clear local session -->
+        <div class="d-flex gap-2 mt-3">
+          <button type="button" id="profile-login-btn" class="btn btn-custom d-none">
+            Go To Login
+          </button>
+          <button type="button" id="profile-logout-btn" class="btn btn-custom d-none">
+            Logout
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/cart.js"></script>
+    <!-- profile.js renders user data, order history, and location sync -->
+    <script src="assets/js/profile.js"></script>
+  </body>
+</html>
